@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+:root {
+  --desaturated-red: hsl(0, 36%, 70%);
+  --soft-red: hsl(0, 93%, 68%);
+  --dark-grayish-red: hsl(0, 6%, 24%);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+main {
+  width: 100%;
+}
+
+body {
+  font-size: 15px;
+  background: #FFF9F9;
+}
+@media (min-width: 600px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+header {
+  height: 5.375em;
+  background: #fff;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-inline: 2em;
+}
+header img {
+  width: 8em;
+}
+
+.hero__pic {
+  width: 100%;
+  height: 250px;
+  background: url("../images/hero-mobile.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero {
+  text-align: center;
+  padding: 4em 2em;
+}
+.hero h1 {
+  text-transform: uppercase;
+  font-size: 3rem;
+  letter-spacing: 0.5rem;
+  margin-bottom: 0.5em;
+  color: var(--dark-grayish-red);
+}
+.hero h1 > span {
+  font-weight: 300;
+  color: var(--desaturated-red);
+}
+.hero p {
+  color: var(--desaturated-red);
+  line-height: 1.5em;
+  margin-bottom: 2em;
+}
+.hero .email {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  width: max-content;
+  border: 1px solid hsla(0deg, 36%, 70%, 0.5);
+  border-radius: 2em;
+}
+.hero .email input {
+  outline: none;
+  border: none;
+  background: none;
+  padding: 1em 7em 1em 1.5em;
+}
+.hero .email input::placeholder {
+  color: var(--desaturated-red);
+}
+.hero .email button {
+  position: absolute;
+  z-index: 100;
+  top: -0.3em;
+  right: -0.3em;
+  padding: 1em 2em;
+  border-radius: 2em;
+  border: none;
+  outline: none;
+  color: #fff;
+  box-shadow: 0 10px 10px hsla(0deg, 74%, 74%, 0.3);
+  background: linear-gradient(135deg, hsl(0deg, 80%, 86%), hsl(0deg, 74%, 74%));
+  cursor: pointer;
+}
+.hero .email button:hover {
+  background: hsl(0deg, 74%, 89%);
+  box-shadow: 0 10px 10px hsla(0deg, 74%, 74%, 0.6);
+}
+.hero .email button svg {
+  width: 1.5em;
+}
+
+@media (min-width: 600px) {
+  body {
+    background: url("../images/bg-pattern-desktop.svg");
+    background-repeat: none;
+    background-size: cover;
+  }
+  header {
+    position: absolute;
+    width: 100%;
+    justify-content: none;
+    align-items: flex-end;
+    padding-left: 7em;
+    background: transparent;
+    height: 10.375em;
+  }
+  .area {
+    flex: 0.5;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "b a";
+    height: 100vh;
+  }
+  .hero__pic {
+    grid-area: a;
+    background: url("../images/hero-desktop.jpg");
+    background-repeat: no-repeat;
+    background-size: cover !important;
+    height: auto !important;
+    width: 100% !important;
+  }
+  .hero {
+    grid-area: b;
+    text-align: left !important;
+    margin: auto;
+    padding-inline: 7em 3em;
+  }
+  .hero h1 {
+    font-size: 4rem;
+  }
+  .email {
+    width: 22em !important;
+    margin: 0 !important;
+    user-select: none;
+  }
+  .email input {
+    padding: 1em 2em !important;
+    width: 30em;
+  }
+  .email button {
+    padding: 1em 3em !important;
+  }
+}
