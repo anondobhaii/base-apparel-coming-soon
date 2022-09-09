@@ -73,12 +73,13 @@ header img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 auto;
+  margin: 0 auto 1em;
   width: max-content;
   border: 1px solid hsla(0deg, 36%, 70%, 0.5);
   border-radius: 2em;
 }
 .hero .email input {
+  width: 17em !important;
   outline: none;
   border: none;
   background: none;
@@ -86,6 +87,12 @@ header img {
 }
 .hero .email input::placeholder {
   color: var(--desaturated-red);
+}
+.hero .email #error {
+  position: absolute;
+  width: 1.7em;
+  right: 7em;
+  color: hsl(0deg, 93%, 68%);
 }
 .hero .email button {
   position: absolute;
@@ -105,8 +112,12 @@ header img {
   background: hsl(0deg, 74%, 89%);
   box-shadow: 0 10px 10px hsla(0deg, 74%, 74%, 0.6);
 }
-.hero .email button svg {
+.hero .email button > svg {
   width: 1.5em;
+}
+.hero #error__msg {
+  padding-left: 1.8em;
+  color: hsl(0deg, 93%, 68%);
 }
 
 @media (min-width: 600px) {
@@ -114,6 +125,7 @@ header img {
     background: url("../images/bg-pattern-desktop.svg");
     background-repeat: none;
     background-size: cover;
+    background-position: center center;
   }
   header {
     position: absolute;
@@ -144,14 +156,15 @@ header img {
     grid-area: b;
     text-align: left !important;
     margin: auto;
-    padding-inline: 7em 3em;
+    padding-inline: 7em 2em;
   }
   .hero h1 {
     font-size: 4rem;
   }
   .email {
     width: 22em !important;
-    margin: 0 !important;
+    margin-inline: 0 !important;
+    margin-bottom: 2em;
     user-select: none;
   }
   .email input {
@@ -161,4 +174,7 @@ header img {
   .email button {
     padding: 1em 3em !important;
   }
+}
+.d-none {
+  display: none;
 }

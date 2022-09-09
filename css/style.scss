@@ -79,11 +79,12 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 auto;
+    margin: 0 auto 1em;
     width: max-content;
     border: 1px solid hsl(0, 36%, 70%, 0.5);
     border-radius: 2em;
     input{
+      width: 17em!important;
       outline: none;
       border: none;
       background: none;
@@ -91,6 +92,12 @@ header{
       &::placeholder{
         color: var(--desaturated-red);
       }
+    }
+    #error{
+      position: absolute;
+      width: 1.7em;
+      right: 7em;
+      color: hsl(0, 93%, 68%);
     }
     button{
       position: absolute;
@@ -110,11 +117,16 @@ header{
       box-shadow: 0 10px 10px hsla(0, 74%, 74%, 0.6);
 
       }
-      svg{
+      >svg{
         width: 1.5em;
       }
     }
   }
+  #error__msg{
+    padding-left: 1.8em;
+    color: hsl(0, 93%, 68%);
+  }
+
 }
 
 @media (min-width: 600px){
@@ -122,6 +134,7 @@ header{
     background: url('../images/bg-pattern-desktop.svg');
     background-repeat: none;
     background-size: cover;
+    background-position: center center;
   }
   header{
     position: absolute;
@@ -153,7 +166,7 @@ header{
     grid-area: b;
     text-align: left!important;
     margin: auto;
-    padding-inline: 7em 3em;  
+    padding-inline: 7em 2em;  
     h1{
       font-size: 4rem;
     } 
@@ -161,7 +174,8 @@ header{
   
   .email{
     width: 22em!important;
-    margin: 0!important;
+    margin-inline: 0!important;
+    margin-bottom: 2em;
     user-select: none;
     input{
       padding: 1em 2em!important;
@@ -170,6 +184,11 @@ header{
     button{
       padding: 1em 3em!important;
     }
+
   }
   
 }
+
+.d-none{
+  display: none;
+}   
